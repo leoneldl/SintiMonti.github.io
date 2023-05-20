@@ -80,26 +80,14 @@ function addInvoice() {
 function shareToWhatsApp() {
     var message = "🌸 Factura de Sinti Monti 🌸\n\n";
     invoices.forEach(function (invoice) {
-        message += "Cliente: " + invoice.client + "\n";
-        message += "Producto: " + invoice.product + "\n";
-        message += "Fecha: " + invoice.date + "\n";
-        message += "Precio: " + invoice.price + "\n";
-        message += "Cantidad: " + invoice.quantity + "\n";
-        message += "Total: " + invoice.total + "\n\n";
+        message += "✽ Cliente: " + invoice.client + "\n";
+        message += "✽ Producto: " + invoice.product + "\n";
+        message += "✽ Fecha: " + invoice.date + "\n";
+        message += "✽ Precio: " + invoice.price + "\n";
+        message += "✽ Cantidad: " + invoice.quantity + "\n";
+        message += "✽ Total: " + invoice.total + "\n\n";
+        var message = "\n\n Gracias por tu compra. Si necesita algun otro producto, no dudes en contactarnos.";
     });
-    
-    // Ajustar la factura para que se vea bien en un mensaje de celular
-    message = message.replace(/:/g, ": ");
-    message = message.replace(/Factura de Sinti Monti/g, "Sinti Monti");
-    message = message.replace(/Producto/g, "Prod.:");
-    message = message.replace(/Fecha/g, "Fecha:");
-    message = message.replace(/Precio/g, "Precio:");
-    message = message.replace(/Cantidad/g, "Cant.:");
-    message = message.replace(/Total/g, "Total:");
-    
-    console.log(message);
-    
-    
 
     var encodedMessage = encodeURIComponent(message);
     var whatsappURL = "https://wa.me/?text=" + encodedMessage;
