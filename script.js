@@ -86,12 +86,15 @@ function shareToWhatsApp() {
         message += "✽ Precio: " + invoice.price + "\n";
         message += "✽ Cantidad: " + invoice.quantity + "\n";
         message += "✽ Total: " + invoice.total + "\n\n";
-        var message = "\n\n Gracias por tu compra. Si necesita algun otro producto, no dudes en contactarnos.";
     });
+
+    message += "\n\n Gracias por tu compra. Si necesitas algún otro producto, no dudes en contactarnos.";
 
     var encodedMessage = encodeURIComponent(message);
     var whatsappURL = "https://wa.me/?text=" + encodedMessage;
     window.open(whatsappURL);
+}
+
 
     
-}
+
