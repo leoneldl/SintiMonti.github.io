@@ -78,7 +78,7 @@ function addInvoice() {
 
 // Función para compartir la lista de facturas por WhatsApp
 function shareToWhatsApp() {
-    var message = "Factura de Sinti Monti\n\n";
+    var message = "🌸 Factura de Sinti Monti 🌸\n\n";
     invoices.forEach(function (invoice) {
         message += "Cliente: " + invoice.client + "\n";
         message += "Producto: " + invoice.product + "\n";
