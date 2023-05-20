@@ -80,15 +80,15 @@ function addInvoice() {
 function shareToWhatsApp() {
     var message = "🌸 Factura de Sinti Monti 🌸\n\n";
     invoices.forEach(function (invoice) {
-        message += "Cliente: " + invoice.client + "\n";
-        message += "Producto: " + invoice.product + "\n";
-        message += "Fecha: " + invoice.date + "\n";
-        message += "Precio: " + invoice.price + "\n";
-        message += "Cantidad: " + invoice.quantity + "\n";
+        message += "👥 Cliente: " + invoice.client + "\n";
+        message += "📦 Producto: " + invoice.product + "\n";
+        message += "📅 Fecha: " + invoice.date + "\n";
+        message += "💲 Precio: " + invoice.price + "\n";
+        message += "✕ Cantidad: " + invoice.quantity + "\n";
         message += "Total: " + invoice.total + "\n\n";
     });
 
-    message += "\n\n Gracias por tu compra. Si necesitas algún otro producto, no dudes en contactarnos.";
+    message += "\nGracias por tu compra. Si necesitas algún otro producto, no dudes en contactarnos.";
     var encodedMessage = encodeURIComponent(message);
     var whatsappURL = "https://wa.me/?text=" + encodedMessage;
     window.open(whatsappURL);
