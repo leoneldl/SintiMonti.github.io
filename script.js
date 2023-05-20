@@ -78,7 +78,9 @@ function addInvoice() {
 
 // Función para compartir la lista de facturas por WhatsApp
 function shareToWhatsApp() {
-    var message = "🌸 Factura de Sinti Monti 🌸\n\n";
+    var message = "─────────────────────────────────────\n";
+    message += "    🌸 Factura de Sinti Monti 🌸\n";
+    message += "─────────────────────────────────────\n\n";
     invoices.forEach(function (invoice) {
         message += "Cliente: " + invoice.client + "\n";
         message += "Producto: " + invoice.product + "\n";
@@ -87,6 +89,10 @@ function shareToWhatsApp() {
         message += "Cantidad: " + invoice.quantity + "\n";
         message += "Total: " + invoice.total + "\n\n";
     });
+    message += "─────────────────────────────────────\n";
+    
+    console.log(message);
+    
 
     var encodedMessage = encodeURIComponent(message);
     var whatsappURL = "https://wa.me/?text=" + encodedMessage;
